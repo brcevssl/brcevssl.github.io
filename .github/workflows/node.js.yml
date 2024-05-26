@@ -33,6 +33,7 @@ jobs:
     - name: Install dependencies
       run: | 
         ls -l $PWD
+        ls -l /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
         find $PWD -maxdepth 1 -type f
         npm install
 
