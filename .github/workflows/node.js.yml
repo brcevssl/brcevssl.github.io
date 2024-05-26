@@ -23,7 +23,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-          path: '././'
+          path: './'
 
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -32,9 +32,7 @@ jobs:
         
     - name: Install dependencies
       run: | 
-        ls -l $PWD
-        ls -l /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
-        find $PWD -maxdepth 1 -type f
+        cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
         npm install
 
     # - name: Run linting
