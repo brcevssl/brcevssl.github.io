@@ -32,7 +32,7 @@ jobs:
         
     - name: Install dependencies
       run: | 
-        echo $PWD
+        ls -l $PWD
         npm install
 
     # - name: Run linting
