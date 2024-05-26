@@ -32,7 +32,8 @@ jobs:
         
     - name: Install dependencies
       run: | 
-        echo ls -l $PWD
+        ls -l $PWD
+        find $PWD -maxdepth 1 -type f
         npm install
 
     # - name: Run linting
