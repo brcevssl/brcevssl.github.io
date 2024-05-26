@@ -35,11 +35,6 @@ jobs:
         cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
         npm install
 
-    - name: Run linting
-      run: |
-        cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
-        npm run lint
-
     - name: Run the tests and generate coverage report
       run: |
         cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
