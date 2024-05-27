@@ -38,6 +38,7 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
+        debug: true
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
 
@@ -61,11 +62,3 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v4
-      with:
-        name: code-coverage-report
-        path: |
-          **/codeql/reports/*.html
-          **/codeql/reports/*.json
