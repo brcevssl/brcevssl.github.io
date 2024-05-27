@@ -48,9 +48,9 @@ jobs:
         with:
           java-version: 17
   
-      - if: matrix.build-mode == "manual"
+      - if: matrix.build-mode == 'manual'
         shell: bash
-        run: "echo Instructions here."
+        run: 'echo Instructions here.'
   
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
