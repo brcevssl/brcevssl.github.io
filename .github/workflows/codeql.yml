@@ -38,7 +38,6 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
-        debug: true
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
 
@@ -62,3 +61,10 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    - name: Upload logs artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: workflow-logs
+        path: /tmp/logs
+              
