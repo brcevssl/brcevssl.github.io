@@ -13,7 +13,7 @@ public class EmployeeApplication {
 	 * Méthode de lancement de l'application.
 	 * @param args : CLI arguments.
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		SpringApplication.run(EmployeeApplication.class, args);
 	}
 
