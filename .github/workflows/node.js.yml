@@ -49,8 +49,8 @@ jobs:
   
       - name: Deploy
         run: |
-          git config --global user.name $user_name
-          git config --global user.email $user_email
+          git config --global user.name "$user_name"
+          git config --global user.email "$user_email"
           git remote set-url origin https://${github_token}@github.com/${repository}
           cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
           npm run deploy
