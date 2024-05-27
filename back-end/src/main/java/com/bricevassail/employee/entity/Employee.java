@@ -8,11 +8,6 @@ import lombok.Data;
 
 /**
  * Modèle de la table regroupant les caractéritiques d'un employé.
- * id
- * name
- * email
- * phone
- * department
  */
 @Entity
 @Data
