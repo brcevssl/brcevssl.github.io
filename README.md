@@ -6,7 +6,7 @@
 
 ## Présentation du projet
 
-Ce projet CRM utilise les technologies suivantes : Java 17, Spring, REST API, React, React Bootstrap, Hibernate, MySQL, JavaScript, et un pipeline CI/CD intégrant des contrôles de sécurité (CodeQL) et de qualité du code (Super-Linter), avec reporting de la couverture du code sur Codecov.
+Technologies utilisées : Java 17, Spring, REST API, React, React Bootstrap, Hibernate, MySQL, JavaScript, et un pipeline CI/CD intégrant des contrôles de sécurité (CodeQL) et de qualité du code (Super-Linter), avec reporting de la couverture du code sur Codecov.
 
 ## Technologies clés
 
