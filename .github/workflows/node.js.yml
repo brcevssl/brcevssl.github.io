@@ -3,9 +3,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -15,48 +15,47 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
           path: './'
-
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        
-    - name: Install dependencies
-      run: | 
-        cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
-        npm install
-
-    - name: Run the tests and generate coverage report
-      run: |
-        cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
-        npm test -- --coverage
-
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-
-    - name: Build
-      run: |
-        cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
-        npm run build
-
-    - name: Deploy
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
-        cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
-        npm run deploy
-      env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-        repository: ${{ github.repository }}
+  
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name: Install dependencies
+        run: | 
+          cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
+          npm install
+  
+      - name: Run the tests and generate coverage report
+        run: |
+          cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
+          npm test -- --coverage
+  
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+  
+      - name: Build
+        run: |
+          cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
+          npm run build
+  
+      - name: Deploy
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          cd /home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/
+          npm run deploy
+        env:
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
