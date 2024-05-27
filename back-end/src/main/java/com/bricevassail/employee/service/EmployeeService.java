@@ -17,8 +17,8 @@ public class EmployeeService {
     /**
      * Création d'un nouvel employé dans la base de données.
      *
-     * @param employee l'objet contenant les informations à sauvegarder.
-     * @return un objet de type employee généré avec un id qui s'incrémente automatiquement.
+     * @param employee : l'objet contenant les informations à sauvegarder.
+     * @return : un objet de type employee généré avec un id qui s'incrémente automatiquement.
      */
     public Employee postEmployee(Employee employee){
 
