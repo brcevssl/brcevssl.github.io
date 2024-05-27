@@ -31,4 +31,25 @@ jobs:
         uses: super-linter/super-linter@v6.5.1  # x-release-please-version
         env:
           # To report GitHub Actions status checks
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          IGNORE_GITIGNORED_FILES: true
+          VALIDATE_JAVA: true
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JAVASCRIPT_STANDARD: true
+          VALIDATE_JSON: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
+          VALIDATE_GITHUB_ACTIONS: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Capture Super-linter report
+        run: |
+          super-linter analyze > super-linter-report.json  
+        shell: bash
+      
+      - name: Upload Super-linter report
+        uses: actions/upload-artifact@v3
+        with:
+          name: super-linter-report
+          path: super-linter-report.json
