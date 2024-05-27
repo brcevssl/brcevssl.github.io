@@ -21,9 +21,7 @@ public class EmployeeService {
      * @return : un objet de type employee généré avec un id qui s'incrémente automatiquement.
      */
     public Employee postEmployee(Employee employee){
-
         return employeeRepository.save(employee);
     }
 
 }
-
