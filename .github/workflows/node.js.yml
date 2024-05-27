@@ -29,12 +29,12 @@ jobs:
           
       - name: Install dependencies
         run: | 
-          cd ./crm
+          cd ./crm/
           npm install
   
       - name: Run the tests and generate coverage report
         run: |
-          cd .
+          cd ./crm/
           npm test -- --coverage
   
       - name: Upload coverage reports to Codecov
@@ -44,7 +44,7 @@ jobs:
   
       - name: Build
         run: |
-          cd ./crm
+          cd ./crm/
           npm run build
   
       - name: Deploy
@@ -52,7 +52,7 @@ jobs:
           git config --global user.name "$USER_NAME"
           git config --global user.email "$USER_EMAIL"
           git remote set-url origin https://${GITHUB_TOKEN}@github.com/${REPOSITORY}
-          cd ./crm
+          cd ./crm/
           npm run deploy
         env:
           USER_NAME: 'github-actions[bot]'
