@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          path: './'
+          path: .
   
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -29,12 +29,12 @@ jobs:
           
       - name: Install dependencies
         run: | 
-          cd "/home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/"
+          cd ./crm
           npm install
   
       - name: Run the tests and generate coverage report
         run: |
-          cd "/home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/"
+          cd .
           npm test -- --coverage
   
       - name: Upload coverage reports to Codecov
@@ -44,18 +44,17 @@ jobs:
   
       - name: Build
         run: |
-          cd "/home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/"
+          cd ./crm
           npm run build
   
       - name: Deploy
         run: |
-          git config --global user.name "$user_name"
-          git config --global user.email "$user_email"
-          git remote set-url origin https://${github_token}@github.com/${repository}
-          cd "/home/runner/work/brcevssl.github.io/brcevssl.github.io/crm/"
+          git config --global user.name "$USER_NAME"
+          git config --global user.email "$USER_EMAIL"
+          git remote set-url origin https://${GITHUB_TOKEN}@github.com/${REPOSITORY}
+          cd ./crm
           npm run deploy
         env:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
+          USER_NAME: 'github-actions[bot]'
+          USER_EMAIL: 'github-actions[bot]@users.noreply.github.com'
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
