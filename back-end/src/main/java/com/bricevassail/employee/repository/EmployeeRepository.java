@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+    /**
+     * Classe permettant les interactions avec la base de données.
+     */
 }

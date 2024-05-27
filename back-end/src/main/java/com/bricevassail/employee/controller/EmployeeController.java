@@ -12,10 +12,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 public class EmployeeController {
+    /**
+     * Classe servant à faire les requêtes HTTP.
+     */
     private final EmployeeService employeeService;
 
+    /**
+     * Création d'un employé dans la base de donnée
+     * @param employee : donnée à sauvegarder dans la base de données.
+     *                 Les données sont à renseigner dans la requête POST.
+     * @return : L'employé avec les infos de la requête POST et l'id généré.
+     */
     @PostMapping("/employee")
-    public Employee postEmployee(@RequestBody Employee employee){
+    public Employee postEmployee(@RequestBody Employee employee) {
         return employeeService.postEmployee(employee);
     }
 }
