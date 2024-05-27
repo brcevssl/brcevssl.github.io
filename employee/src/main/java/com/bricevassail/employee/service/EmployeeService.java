@@ -12,7 +12,6 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     public Employee postEmployee(Employee employee){
-        System.out.println("EmployeeService created. employeeRepository: " + employeeRepository);
         return employeeRepository.save(employee);
     }
 
