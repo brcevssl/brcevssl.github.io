@@ -28,7 +28,7 @@ Implémente les fonctionnalités principales de l'application CRM.
 
 #### Front-end
 
-Construit l'interface utilisateur en utilisant React et React Bootstrap.
+Développement de l'interface utilisateur en utilisant React et React Bootstrap.
 
 - **Composants**: Des composants React réutilisables pour les éléments d'interface utilisateur tels que les tableaux, les formulaires, les graphiques et autres éléments visuels.
 - **Routage**: Gère la navigation entre les différentes sections de l'application en utilisant React Router.
