@@ -1,4 +1,4 @@
-.nabar {
+.navbar {
     background-color: #343a40;
 }
 
@@ -10,7 +10,6 @@
     color: #fff !important;
     text-decoration: none !important;
     margin-right: 20px;
-
 }
 
 @media (max-width: 576px) {
