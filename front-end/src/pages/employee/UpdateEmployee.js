@@ -15,7 +15,7 @@ const UpdateEmployee = () =>{
         email: "",
         phone: "",
         department: ""
-    })
+    });
 
     const handleInputChange = (event) =>{
         const {name, value} = event.target;
@@ -23,7 +23,7 @@ const UpdateEmployee = () =>{
             ...formData,
             [name]:value,
         })
-    }
+    };
 
     useEffect(() => {
         const fetchEmployee = async () =>{
@@ -54,7 +54,7 @@ const UpdateEmployee = () =>{
         } catch (error) {
             console.error("Error updating user : ", error.message);
         }
-    }
+    };
 
     return (
         <div className="center-form">

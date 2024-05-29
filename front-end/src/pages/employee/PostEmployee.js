@@ -11,7 +11,7 @@ const PostEmployee = () =>{
         email: "",
         phone: "",
         department: ""
-    })
+    });
 
     const handleInputChange = (event) =>{
         const {name, value} = event.target;
@@ -19,7 +19,7 @@ const PostEmployee = () =>{
             ...formData,
             [name]:value,
         })
-    }
+    };
 
     const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ const PostEmployee = () =>{
         } catch (error) {
             console.log("Error creating an employee : ", error.message);
         }
-    }
+    };
 
     return (
         <div className="center-form">
