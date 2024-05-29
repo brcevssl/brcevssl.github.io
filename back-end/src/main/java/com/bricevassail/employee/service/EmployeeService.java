@@ -5,8 +5,7 @@ import com.bricevassail.employee.repository.EmployeeRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -57,8 +56,8 @@ public class EmployeeService {
      * @param id : id de l'employé à supprimer.
      */
     public void deleteEmployee(Long id){
-        if(!employeeRepository.existsById(id)){
-            throw new EntityNotFoundException("Employee with ID "+ id + " not found.");
+        if (!employeeRepository.existsById(id)) {
+            throw new EntityNotFoundException("Employee with ID " + id + " not found.");
         }
         employeeRepository.deleteById(id);
     }
@@ -71,7 +70,7 @@ public class EmployeeService {
      */
     public Employee updateEmployee(Long id, Employee employee){
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
-        if(optionalEmployee.isPresent()){
+        if (optionalEmployee.isPresent()) {
             Employee existringEmployee = optionalEmployee.get();
             existringEmployee.setName(employee.getName());
             existringEmployee.setEmail(employee.getEmail());
