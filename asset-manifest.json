@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ReactCRM/static/css/main.35f1c151.css",
-    "main.js": "/ReactCRM/static/js/main.39f44f95.js",
+    "main.js": "/ReactCRM/static/js/main.fd89731d.js",
     "static/js/453.fa890282.chunk.js": "/ReactCRM/static/js/453.fa890282.chunk.js",
     "index.html": "/ReactCRM/index.html",
     "main.35f1c151.css.map": "/ReactCRM/static/css/main.35f1c151.css.map",
-    "main.39f44f95.js.map": "/ReactCRM/static/js/main.39f44f95.js.map",
+    "main.fd89731d.js.map": "/ReactCRM/static/js/main.fd89731d.js.map",
     "453.fa890282.chunk.js.map": "/ReactCRM/static/js/453.fa890282.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.35f1c151.css",
-    "static/js/main.39f44f95.js"
+    "static/js/main.fd89731d.js"
   ]
 }
