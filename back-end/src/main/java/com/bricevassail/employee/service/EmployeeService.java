@@ -25,7 +25,7 @@ public class EmployeeService {
      * Obtention d'un employé par son id.
      * @return : l'employé.
      */
-    public Employee getEmployeeById(Long id){
+    public Employee getEmployeeById(Long id) {
         return employeeRepository.findById(id).orElse(null);
     }
 
@@ -35,7 +35,7 @@ public class EmployeeService {
      * @return : liste contenant tous
      *         les employés de la base de données.
      */
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
@@ -47,7 +47,7 @@ public class EmployeeService {
      * @return : un objet de type employee généré avec un
      *         id qui s'incrémente automatiquement.
      */
-    public Employee postEmployee(Employee employee){
+    public Employee postEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
@@ -55,7 +55,7 @@ public class EmployeeService {
      * Suppression d'un client dans la base de données.
      * @param id : id de l'employé à supprimer.
      */
-    public void deleteEmployee(Long id){
+    public void deleteEmployee(Long id) {
         if (!employeeRepository.existsById(id)) {
             throw new EntityNotFoundException("Employee with ID " + id + " not found.");
         }
@@ -68,7 +68,7 @@ public class EmployeeService {
      * @param employee : Employé.
      * @return Employé avec ses informations modifiées.
      */
-    public Employee updateEmployee(Long id, Employee employee){
+    public Employee updateEmployee(Long id, Employee employee) {
         Optional<Employee> optionalEmployee = employeeRepository.findById(id);
         if (optionalEmployee.isPresent()) {
             Employee existringEmployee = optionalEmployee.get();

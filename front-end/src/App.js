@@ -11,10 +11,10 @@ function App () {
       <>
         <Header/>
         <Routes>
-          <Route path="/" element={<Dashboard/>}/>
-          <Route path="/employee" element={<PostEmployee/>}/>
-          <Route path="/employee/:id" element={<UpdateEmployee/>}/>
-          <Route path="*" element={<NoMatch/>}/>
+          <Route path="/" element={<Dashboard />}/>
+          <Route path="/employee" element={<PostEmployee />}/>
+          <Route path="/employee/:id" element={<UpdateEmployee />}/>
+          <Route path="*" element={<NoMatch />}/>
         </Routes>
       </>
     ); 

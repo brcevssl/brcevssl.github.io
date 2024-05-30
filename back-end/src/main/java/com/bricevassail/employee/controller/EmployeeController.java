@@ -35,7 +35,7 @@ public class EmployeeController {
      * @return : l'employé.
      */
     @GetMapping("/employee/{id}")
-    public ResponseEntity<?> getEmployeeById(@PathVariable Long id){
+    public ResponseEntity<?> getEmployeeById(@PathVariable Long id) {
         Employee employee = employeeService.getEmployeeById(id);
         if (employee == null) {
             return ResponseEntity.notFound().build();
@@ -50,7 +50,7 @@ public class EmployeeController {
      *         les employés de la base de données
      */
     @GetMapping("/employees")
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 
@@ -61,7 +61,7 @@ public class EmployeeController {
      * @return : L'employé avec les infos de la requête POST et l'id généré.
      */
     @PostMapping("/employee")
-    public Employee postEmployee(@RequestBody Employee employee){
+    public Employee postEmployee(@RequestBody Employee employee) {
         return employeeService.postEmployee(employee);
     }
 
@@ -71,7 +71,7 @@ public class EmployeeController {
      * @return : réponse HTTP à la requête.
      */
     @DeleteMapping("/employee/{id}")
-    public ResponseEntity<?> deleteEmployee(@PathVariable Long id){
+    public ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
         try {
             employeeService.deleteEmployee(id);
             return new ResponseEntity<>(
@@ -91,7 +91,7 @@ public class EmployeeController {
      * @return Employé avec ses informations modifiées.
      */
     @PatchMapping("/employee/{id}")
-    public ResponseEntity<?> updateEmployee(@PathVariable Long id, @RequestBody Employee employee){
+    public ResponseEntity<?> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         Employee updatedEmployee = employeeService.updateEmployee(id, employee);
         if (updatedEmployee == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

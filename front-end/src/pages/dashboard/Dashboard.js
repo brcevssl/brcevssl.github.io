@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () =>{
 
-    const [employees, setEmployees ] = useState ([]);
+    const [employees, setEmployees] = useState ([]);
     const navigate = useNavigate();
 
     useEffect( () =>{
@@ -47,9 +47,9 @@ const Dashboard = () =>{
         }
     }
 
-    const handleUpdate = (employeeId) =>{
+    const handleUpdate = (employeeId) => {
         navigate(`/employee/${employeeId}`);
-    }
+    };
 
     return (
         <Container className="mt-5">
